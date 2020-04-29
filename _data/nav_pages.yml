@@ -1,0 +1,13 @@
+pages:
+
+- title: Home
+  url: about_me.html
+
+- title: Work
+  url: work.html
+
+- title: About me
+  url: about_me.html
+
+- title: Contact
+  url: contact.html
