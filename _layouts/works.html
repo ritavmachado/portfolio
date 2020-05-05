@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<h1>Works</h1>
+
+{{content}}
+
+<h2>Other Works</h2>
+<nav>
+    <ul>
+        {% for work in site.works %}
+        <li>
+            <a href="{{site.baseurl}}/works/{{work.slug}}" class="{% if page.url contains work.slug %}current{% endif %}">{{work.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
