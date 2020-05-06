@@ -4,7 +4,7 @@ pages:
   url: about_me.html
 
 - title: Work
-  url: work.html
+  url: work
 
 - title: About me
   url: about_me.html
