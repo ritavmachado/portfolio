@@ -1,13 +1,13 @@
 pages:
 
 - title: Home
-  url: about_me.html
+  url: index.html
 
 - title: Work
   url: work
 
 - title: About me
-  url: about_me.html
+  url: about_me
 
 - title: Contact
   url: contact.html
