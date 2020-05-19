@@ -1,13 +1,10 @@
 pages:
 
-- title: Home
-  url: index.html
-
 - title: Work
   url: work
 
 - title: About me
   url: about_me
 
-- title: Contact
-  url: contact.html
+- title: Let's Talk!
+  url: lets_talk
