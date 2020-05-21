@@ -1,5 +1,4 @@
 ---
-layout: project
 title: "Project 05"
 image: ../assets/img/section_work/work_05.png
 image_alt: happy app mockups with hints of yellow

@@ -9,7 +9,7 @@ permalink: /work/
         {% for project in site.projects limit:6 %}
         <div class="card">
             <figure>
-                <a href="{{project.link}}">
+                <a target="_blank" href="{{project.link}}">
                     <img src="{{project.image}}" alt="{{project.image_alt}}">
                     <figcaption>
                         <h3><mark>&nbsp;{{project.project_title}}&nbsp;</mark></h3>
@@ -24,7 +24,7 @@ permalink: /work/
         {% for project in site.projects offset:6 %}
         <div class="card">
             <figure>
-                <a href="#">
+                <a target="_blank" href="{{project.link}}">
                     <img src="{{project.image}}" alt="{{project.image_alt}}">
                     <figcaption>
                         <h3><mark>&nbsp;{{project.project_title}}&nbsp;</mark></h3>

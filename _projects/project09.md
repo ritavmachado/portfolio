@@ -1,5 +1,4 @@
 ---
-layout: project
 title: "Project 09"
 image: ../assets/img/section_work/work_09.png
 image_alt: Analog Photography of a body black and white

@@ -1,5 +1,4 @@
 ---
-layout: project
 title: "Project 08"
 image: ../assets/img/section_work/work_08.png
 image_alt: website mockup with the title Super Duper Product

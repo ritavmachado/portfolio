@@ -1,5 +1,4 @@
 ---
-layout: project
 title: "Project 06"
 image: ../assets/img/section_work/work_06.png
 image_alt: orange illustrated poster
