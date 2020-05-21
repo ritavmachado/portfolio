@@ -40,6 +40,13 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  studies:
+    output: true
+    permalink: /studies/:path/
+  skills:
+    output: true
+    permalink: /skills/:path/
+    
 
 # Exclude from processing.
 # The following items will not be processed, by default.
