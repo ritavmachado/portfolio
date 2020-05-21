@@ -1,4 +1,4 @@
 ---
-name: Adobe Photoshop 1
+name: Adobe Photoshop
 meter_value_id: skill_01
 ---

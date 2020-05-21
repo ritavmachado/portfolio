@@ -55,55 +55,20 @@ permalink: /about_me/
     <h2>SKILLS</h2>
     <div class="wrapper_skills">
         <div class="column_skills">
-            {% for skill in site.skills %}
+            {% for skill in site.skills limit:5 %}
             <h3><mark>&nbsp;{{skill.name}}&nbsp;</mark></h3>
             <div class="meter">
                 <div class="value" id="{{skill.meter_value_id}}"></div>
             </div>
             {% endfor %}
-
-            <h3><mark>&nbsp;Adobe&nbsp;</mark> <mark>Photoshop&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_01"></div>
-            </div>
-            <h3><mark>&nbsp;Adobe Illustrator&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_02"></div>
-            </div>
-            <h3><mark>&nbsp;Adobe InDesign&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_03"></div>
-            </div>
-            <h3><mark>&nbsp;Adobe Lightroom&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_04"></div>
-            </div>
-            <h3><mark>&nbsp;Adobe Premiere&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_05"></div>
-            </div>
         </div>
         <div class="column_skills">
-            <h3><mark>&nbsp;Sketch&nbsp;</mark></h3>
+            {% for skill in site.skills offset:5 %}
+            <h3><mark>&nbsp;{{skill.name}}&nbsp;</mark></h3>
             <div class="meter">
-                <div class="value" id="skill_06"></div>
+                <div class="value" id="{{skill.meter_value_id}}"></div>
             </div>
-            <h3><mark>&nbsp;Figma&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_07"></div>
-            </div>
-            <h3><mark>&nbsp;Invision&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_08"></div>
-            </div>
-            <h3><mark>&nbsp;HTML&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_09"></div>
-            </div>
-            <h3><mark>&nbsp;CSS&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="skill_10"></div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
