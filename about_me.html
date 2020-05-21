@@ -1,0 +1,74 @@
+---
+layout: default
+permalink: /about_me/
+---
+
+<!--About-->
+<section id="section_about">
+    <h2>ABOUT</h2>
+    <figure>
+        <img src="../assets/img/section_about/profile.png" alt="Profile picture of Rita Machado">
+    </figure>
+    <div class="wrapper_aboutme">
+        <p>I’ve started my work on analog photography as a hobby. Influenced by the Communication Design Degree that
+            I’ve
+            taken, editorial publications, branding field, and especially Illustration came along the way. But quickly
+            it
+            developed to UX UI Design as my main interest.
+            I focus on a strong use of color and typography with manual compositions.
+        </p>
+        <p><mark>&nbsp;&nbsp;illustration&nbsp;enthusiast&nbsp;&nbsp;</mark>&nbsp;
+            <mark>&nbsp;&nbsp;plant&nbsp;lover&nbsp;&nbsp;</mark>&nbsp;
+            <mark>&nbsp;&nbsp;podcast&nbsp;addict&nbsp;&nbsp;</mark></p>
+    </div>
+</section>
+
+<!--Studies-->
+<section id="section_studies">
+    <h2>STUDIES</h2>
+    <div class="wrapper_studies">
+        <div class="column_studies">
+            {% for study in site.studies limit:5 %}
+            <div class="box">
+                <figure><img src="{{study.image}}" alt="{{study.image_alt}}"></figure>
+                <h3><mark>&nbsp;{{study.title}}&nbsp;</mark></h3>
+                <h4>{{study.study_date}}</h4>
+                <p>{{study.institution}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="column_studies">
+            {% for study in site.studies offset:5 %}
+            <div class="box">
+                <figure><img src="{{study.image}}" alt="{{study.image_alt}}"></figure>
+                <h3><mark>&nbsp;{{study.title}}&nbsp;</mark></h3>
+                <h4>{{study.study_date}}</h4>
+                <p>{{study.institution}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--Skills-->
+<section id="section_skills">
+    <h2>SKILLS</h2>
+    <div class="wrapper_skills">
+        <div class="column_skills">
+            {% for skill in site.skills limit:5 %}
+            <h3><mark>&nbsp;{{skill.name}}&nbsp;</mark></h3>
+            <div class="meter">
+                <div class="value" id="{{skill.meter_value_id}}"></div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="column_skills">
+            {% for skill in site.skills offset:5 %}
+            <h3><mark>&nbsp;{{skill.name}}&nbsp;</mark></h3>
+            <div class="meter">
+                <div class="value" id="{{skill.meter_value_id}}"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
