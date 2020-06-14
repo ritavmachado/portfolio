@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
-
 // Import partials.
-@import "portfolio/colors",
-"portfolio/typography"
-;
+@import "portfolio/colors";
+@import "portfolio/typography";
 
 * {
     margin: 0;
@@ -57,73 +53,78 @@ header #nav_mobile {
 #menuToggle {
     width: 100%;
     top: 25px;
-    padding-left: 20px;
+    padding-left: 18px;
     position: relative;
     z-index: 1;
     display: block;
     -webkit-user-select: none;
     user-select: none;
-}
 
-#menuToggle a {
-    color: $blue;
-    transition: color 0.3s ease;
-}
+    a {
+        color: $blue;
+        transition: color 0.3s ease;
 
-#menuToggle a:active {
-    -webkit-text-stroke: 0px;
-    -webkit-text-fill-color: $blue;
-    color: $blue;
-}
+        &:active {
+            -webkit-text-stroke: 0px;
+            -webkit-text-fill-color: $blue;
+            color: $blue;
+        }
+    }
 
-#menuToggle input {
-    width: 40px;
-    height: 32px;
-    top: -7px;
-    left: 15px;
-    position: absolute;
-    z-index: 2;
-    display: block;
-    opacity: 0;
-    cursor: pointer;
-    -webkit-touch-callout: none;
-}
+    input {
+        width: 40px;
+        height: 32px;
+        top: -7px;
+        left: 15px;
+        position: absolute;
+        z-index: 2;
+        display: block;
+        opacity: 0;
+        cursor: pointer;
+        -webkit-touch-callout: none;
 
-#menuToggle span {
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-    z-index: 1;
-    display: block;
-    background: $white;
-    border-radius: 3px;
-    transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
-}
+        &:checked~span {
+            opacity: 1;
+            background: $dark-blue;
+            transform: rotate(45deg) translate(-2px, -1px);
+        }
 
-#menuToggle span:first-child {
-    transform-origin: 0% 0%;
-}
+        &:checked~span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
 
-#menuToggle span:nth-last-child(2) {
-    transform-origin: 0% 100%;
-}
+        &:checked~span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
 
-#menuToggle input:checked~span {
-    opacity: 1;
-    background: $dark-blue;
-    transform: rotate(45deg) translate(-2px, -1px);
-}
+        &:checked~ul {
+            transform: none;
+        }
+    }
 
-#menuToggle input:checked~span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
+    span {
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        z-index: 1;
+        display: block;
+        background: $white;
+        border-radius: 3px;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
 
-#menuToggle input:checked~span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
+        &:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        &:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+    }
+
 }
 
 #menu_mobile {
@@ -138,21 +139,16 @@ header #nav_mobile {
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-}
 
-#menu_mobile li {
-    padding: 25px 0;
-    font-family: 'Rubik Mono One', sans-serif;
-    font-size: 20px;
-    -webkit-text-stroke: 1.5px;
-    -webkit-text-fill-color: transparent;
-    list-style-type: none;
+    li {
+        padding: 25px 0;
+        font-family: $headline-font;
+        font-size: 20px;
+        -webkit-text-stroke: 1.5px;
+        -webkit-text-fill-color: transparent;
+        list-style-type: none;
+    }
 }
-
-#menuToggle input:checked~ul {
-    transform: none;
-}
-
 
 h1 {
     width: 275px;
@@ -160,7 +156,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Rubik Mono One', sans-serif;
+    font-family: $headline-font;
     font-size: 20px;
     line-height: 1.5;
     text-align: left;
@@ -178,62 +174,32 @@ main {
     position: relative;
     background-color: $white;
     flex: 1;
-}
 
-/* Menu - Desktop */
-#wrapper_nav {
-    display: none;
-}
-
-main nav {
-    width: 100px;
-    height: 100vh;
-    top: 0;
-    padding-left: 50px;
-    position: sticky;
-    display: flex;
-}
-
-main ul {
-    padding-left: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-}
-
-#wrapper_nav li {
-    margin: 31% 0;
-    font-family: 'Rubik Mono One', sans-serif;
-    font-size: 20px;
-    text-align: left;
-    -webkit-text-stroke: 1.5px $blue;
-    -webkit-text-fill-color: transparent;
-    list-style-type: none;
+    ul {
+        padding-left: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 a {
     text-decoration: none;
+
+    &:active {
+        color: $blue;
+    }
+
+    &:visited {
+        color: $blue;
+    }
+
+    &:hover {
+        color: $blue;
+    }
 }
 
-a:active {
-    color: $blue;
-}
-
-a:visited {
-    color: $blue;
-}
-
-a:hover {
-    color: $blue;
-}
-
-/* Script Change Color Menu-Desktop */
-.menu_active_element {
-    -webkit-text-stroke: 0px;
-    -webkit-text-fill-color: $blue;
-    color: $blue;
-}
 
 /* Sections */
 #section_about,
@@ -255,21 +221,27 @@ a:hover {
     background-repeat: repeat;
     background-size: 500px;
     background-position: center;
+
+    img {
+        width: 30%;
+        border-radius: 50%;
+    }
+
+    p {
+        margin-bottom: 4%;
+        display: block;
+        color: $grey-blue;
+    }
 }
 
 h2 {
     margin: 5% 0% 15%;
     display: flex;
-    font-family: 'Rubik Mono One', sans-serif;
+    font-family: $headline-font;
     font-size: 20px;
     text-align: left;
     color: transparent;
     -webkit-text-stroke: 0.8px $blue;
-}
-
-#section_about img {
-    width: 30%;
-    border-radius: 50%;
 }
 
 .wrapper_aboutme {
@@ -279,15 +251,9 @@ h2 {
 p {
     max-width: 600px;
     display: flex;
-    font-family: 'Rubik', sans-serif;
+    font-family: $text-font;
     font-size: 16px;
     line-height: 1.5;
-    color: $grey-blue;
-}
-
-#section_about p {
-    margin-bottom: 4%;
-    display: block;
     color: $grey-blue;
 }
 
@@ -319,29 +285,29 @@ p {
     border-radius: 6px;
     background-color: $white;
     box-shadow: 2px 2px 6px $grey-blue-shadow;
-}
 
-.box figure {
-    display: none;
+    figure {
+        display: none;
+    }
+
+    p {
+        margin-top: 25px;
+    }
 }
 
 h3 {
     float: left;
     display: flex;
-    font-family: 'Rubik', sans-serif;
+    font-family: $text-font;
     font-size: 16px;
 }
 
 h4 {
     top: 0;
     /* float: right; */
-    font-family: 'Rubik', sans-serif;
+    font-family: $text-font;
     font-size: 12px;
     color: $grey-blue;
-}
-
-.box p {
-    margin-top: 25px;
 }
 
 /*Section_Skills*/
@@ -367,10 +333,6 @@ h4 {
     flex: 50%;
     flex-direction: column;
     margin-right: 20%;
-}
-
-#section_skills .wrapper_skills h3 {
-    color: $white;
 }
 
 .meter {
@@ -469,10 +431,10 @@ figcaption {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-}
 
-figcaption p {
-    margin-top: 5%;
+    p {
+        margin-top: 5%;
+    }
 }
 
 /*Footer*/
@@ -484,13 +446,13 @@ footer {
     display: flex;
     align-items: center;
     background-color: $dark-blue;
-}
 
-footer p {
-    width: 50%;
-    font-family: 'Rubik', sans-serif;
-    font-size: 12px;
-    color: $blue;
+    p {
+        width: 50%;
+        font-family: $text-font;
+        font-size: 12px;
+        color: $blue;
+    }
 }
 
 #footer_rights {
@@ -501,36 +463,37 @@ footer p {
 
 
 /*Lets Talk*/
-#social ul {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-}
+#social {
+    ul {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
 
-#social li {
-    padding-left: 12px;
-    display: flex;
-    font-family: 'Rubik', sans-serif;
-    font-size: 12px;
-    color: $blue;
-}
+    li {
+        padding-left: 12px;
+        display: flex;
+        font-family: $text-font;
+        font-size: 12px;
+        color: $blue;
+    }
 
-#social a {
-    color: $blue;
-}
+    a {
+        color: $blue;
 
-#social a:visited {
-    color: $blue;
-}
+        &:visited {
+            color: $blue;
+        }
 
-#social a:active {
-    color: $blue;
-}
+        &:active {
+            color: $blue;
+        }
 
-#social a:hover {
-    color: $blue;
+        &:hover {
+            color: $blue;
+        }
+    }
 }
-
 
 /*Media Queries - DESKTOP*/
 @media screen and (min-width: 620px) {
@@ -538,6 +501,22 @@ footer p {
     /*Header*/
     header {
         background-size: 100% 100%;
+
+        #nav_desktop {
+            display: block;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            li {
+                display: inline;
+                margin: 12px;
+            }
+        }
+
+        #nav_mobile {
+            display: none;
+        }
     }
 
     .topbar {
@@ -552,27 +531,11 @@ footer p {
         display: block;
     }
 
-    header #nav_desktop {
-        display: block;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
     #menu_desktop {
         margin-left: auto;
         margin-bottom: 0;
-        font-family: 'Rubik', sans-serif;
+        font-family: $text-font;
         font-size: 16px;
-    }
-
-    header #nav_desktop li {
-        display: inline;
-        margin: 12px;
-    }
-
-    header #nav_mobile {
-        display: none;
     }
 
     h1 {
@@ -583,39 +546,35 @@ footer p {
     }
 
     /*Main*/
-    /* #section_about,
-    #section_skills,
-    #section_studies,
-    #section_work {
-        padding-left: 35%;
-    } */
 
     /*Section_Studies*/
     .column_studies {
         padding: 0 2%;
     }
 
-    .box figure {
-        width: 50px;
-        height: 50px;
-        margin-right: 4%;
-        float: left;
-        display: block;
-    }
+    .box {
+        figure {
+            width: 50px;
+            height: 50px;
+            margin-right: 4%;
+            float: left;
+            display: block;
+        }
 
-    .box img {
-        width: 100%;
-        border-radius: 50%;
-        box-shadow: 2px 2px 6px $grey-blue-shadow;
+        img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 2px 2px 6px $grey-blue-shadow;
+        }
     }
 
     /*Section_Skills*/
     #section_skills {
         flex-direction: column;
-    }
 
-    #section_skills .meter {
-        width: 100%;
+        .meter {
+            width: 100%;
+        }
     }
 
     /*Section_Work*/
@@ -625,23 +584,36 @@ footer p {
 
     .card {
         position: relative;
-    }
 
-    .card img {
-        filter: none;
-        transition: filter 1s;
-        -moz-transition: filter 1s;
-        -webkit-transition: filter 1s;
-        -o-transition: filter 1s;
-    }
+        img {
+            filter: none;
+            transition: filter 1s;
+            -moz-transition: filter 1s;
+            -webkit-transition: filter 1s;
+            -o-transition: filter 1s;
+        }
 
-    .card figure:hover img {
-        filter: blur(2px) opacity(30%);
-        transition: filter 0.1s;
-        -moz-transition: filter 0.1s;
-        -webkit-transition: filter 0.1s;
-        -o-transition: filter 0.1s;
-        animation-fill-mode: forwards;
+        figure {
+            &:hover img {
+                filter: blur(2px) opacity(30%);
+                transition: filter 0.1s;
+                -moz-transition: filter 0.1s;
+                -webkit-transition: filter 0.1s;
+                -o-transition: filter 0.1s;
+                animation-fill-mode: forwards;
+            }
+
+            &:hover figcaption {
+                display: flex;
+                opacity: 1;
+                transition: opacity 0.1s;
+                -moz-transition: opacity 0.1s;
+                -webkit-transition: opacity 0.1s;
+                -o-transition: opacity 0.1s;
+                animation-fill-mode: forwards;
+                cursor: pointer;
+            }
+        }
     }
 
     figcaption {
@@ -656,17 +628,6 @@ footer p {
         -moz-transition: opacity 1s;
         -webkit-transition: opacity 1s;
         -o-transition: opacity 1s;
-    }
-
-    .card figure:hover figcaption {
-        display: flex;
-        opacity: 1;
-        transition: opacity 0.1s;
-        -moz-transition: opacity 0.1s;
-        -webkit-transition: opacity 0.1s;
-        -o-transition: opacity 0.1s;
-        animation-fill-mode: forwards;
-        cursor: pointer;
     }
 
 }
