@@ -1,6 +1,12 @@
-// Import partials.
+/* Import partials */
 @import "portfolio/colors";
 @import "portfolio/typography";
+
+@mixin media-query($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
 
 * {
     margin: 0;
@@ -496,7 +502,7 @@ footer {
 }
 
 /*Media Queries - DESKTOP*/
-@media screen and (min-width: 620px) {
+@include media-query(620px) {
 
     /*Header*/
     header {
@@ -632,7 +638,7 @@ footer {
 
 }
 
-@media screen and (min-width: 800px) {
+@include media-query(800px) {
 
     /*Section_Work*/
     .column_work {
@@ -646,7 +652,7 @@ footer {
 
 }
 
-@media screen and (min-width: 870px) {
+@include media-query(870px) {
 
     /*Section_Skills*/
     .wrapper_skills {
@@ -666,7 +672,7 @@ footer {
 
 }
 
-@media screen and (min-width: 955px) {
+@include media-query(955px) {
 
     /*Section_Studies*/
     #section_studies {
