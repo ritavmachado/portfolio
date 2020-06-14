@@ -4,7 +4,7 @@
       <a href="{{site.baseurl}}/index.html">{{ item.title }}
         <img id="logo" src="{{site.baseurl}}/assets/img/logo.svg" alt="Logo com sigla RM">
       </a>
-      <ul>
+      <ul id="menu_desktop">
         {% for item in site.data.nav_pages.pages %}
         <li><a href="{{site.baseurl}}/{{item.url}}">{{ item.title }}</a></li>
         {% endfor %}
@@ -16,7 +16,7 @@
         <span></span>
         <span></span>
         <span></span>
-        <ul id="menu">
+        <ul id="menu_mobile">
           {% for item in site.data.nav_pages.pages %}
           <li><a href="{{site.baseurl}}/{{item.url}}">{{ item.title }}</a></li>
           {% endfor %}
