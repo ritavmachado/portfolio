@@ -527,7 +527,7 @@ footer {
 
     .topbar {
         position: relative;
-        background-color: initial;
+        background-color: $white;
     }
 
     #logo {
@@ -585,7 +585,7 @@ footer {
 
     /*Section_Work*/
     #section_work {
-        padding: 5% 5% 5% 30%;
+        padding: 5% 5% 5% 5%;
     }
 
     .card {
@@ -611,29 +611,29 @@ footer {
 
             &:hover figcaption {
                 display: flex;
-                opacity: 1;
-                transition: opacity 0.1s;
-                -moz-transition: opacity 0.1s;
-                -webkit-transition: opacity 0.1s;
-                -o-transition: opacity 0.1s;
-                animation-fill-mode: forwards;
+                // opacity: 1;
+                // transition: opacity 0.1s;
+                // -moz-transition: opacity 0.1s;
+                // -webkit-transition: opacity 0.1s;
+                // -o-transition: opacity 0.1s;
+                // animation-fill-mode: forwards;
                 cursor: pointer;
             }
         }
     }
 
     figcaption {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
         padding: 60px;
         overflow: hidden;
-        opacity: 0;
-        transition: opacity 1s;
-        -moz-transition: opacity 1s;
-        -webkit-transition: opacity 1s;
-        -o-transition: opacity 1s;
+        // opacity: 0;
+        // transition: opacity 1s;
+        // -moz-transition: opacity 1s;
+        // -webkit-transition: opacity 1s;
+        // -o-transition: opacity 1s;
     }
 
 }
