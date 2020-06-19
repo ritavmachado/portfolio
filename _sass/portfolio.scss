@@ -241,13 +241,14 @@ a {
 }
 
 h2 {
-    margin: 5% 0% 15%;
+    margin: 30% 0% 5%;
     display: flex;
     font-family: $headline-font;
     font-size: 20px;
     text-align: left;
     color: transparent;
     -webkit-text-stroke: 0.8px $blue;
+    grid-area: title;
 }
 
 .wrapper_aboutme {
@@ -404,8 +405,26 @@ h4 {
 #section_work {
     min-height: 100vh;
     padding: 5%;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        "title title"
+        "column_work01 column_work01"
+        "column_work02 column_work02";
+}
+
+.column_work01 {
+    grid-area: column_work01;
+}
+
+.column_work02 {
+    grid-area: column_work02;
 }
 
 .card {
@@ -506,6 +525,8 @@ footer {
 
     /*Header*/
     header {
+        position: fixed;
+        z-index: 1;
         background-size: 100% 100%;
 
         #nav_desktop {
@@ -588,6 +609,10 @@ footer {
         padding: 5% 5% 5% 5%;
     }
 
+    h2 {
+        margin: 10% 0% 5%;
+    }
+
     .card {
         position: relative;
 
@@ -641,6 +666,12 @@ footer {
 @include media-query(800px) {
 
     /*Section_Work*/
+    #section_work {
+        grid-template-areas:
+            "title title"
+            "column_work01 column_work02";
+    }
+
     .column_work {
         padding: 0 8px;
         flex: 25%;

@@ -5,7 +5,7 @@ permalink: /work/
 
 <section id="section_work">
     <h2>Work</h2>
-    <div class="column_work">
+    <div class="column_work column_work01">
         {% for project in site.projects limit:6 %}
         <div class="card">
             <figure>
@@ -20,7 +20,7 @@ permalink: /work/
         </div>
         {% endfor %}
     </div>
-    <div class="column_work">
+    <div class="column_work column_work02">
         {% for project in site.projects offset:6 %}
         <div class="card">
             <figure>
@@ -35,3 +35,4 @@ permalink: /work/
         </div>
         {% endfor %}
     </div>
+</section>
