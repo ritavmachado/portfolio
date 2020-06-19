@@ -161,6 +161,8 @@ header #nav_mobile {
     }
 }
 
+/* Typography */
+
 h1 {
     width: 275px;
     position: absolute;
@@ -176,6 +178,30 @@ h1 {
 
 mark {
     background-color: $blue;
+}
+
+h2 {
+    margin: 30% 0% 5%;
+    display: flex;
+    font-family: $headline-font;
+    font-size: 24px;
+    text-align: left;
+    color: transparent;
+    -webkit-text-stroke: 0.8px $blue;
+    grid-area: title;
+}
+
+p {
+    max-width: 600px;
+    display: flex;
+    font-family: $text-font;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $grey-blue;
+
+    &::selection {
+        background-color: $blue;
+    }
 }
 
 /* Main */
@@ -280,51 +306,36 @@ figcaption {
 #section_about {
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include grid-template-mobile;
+    grid-template-areas:
+        "title"
+        "figure_profile"
+        "wrapper_aboutme";
     background-image: url(img/section_about/background_01.png);
     background-repeat: repeat;
     background-size: 500px;
     background-position: center;
 
-    img {
-        width: 30%;
-        border-radius: 50%;
+    figure {
+        grid-area: figure_profile;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 30%;
+            border-radius: 50%;
+        }
     }
 
-    p {
-        margin-bottom: 4%;
-        display: block;
-        color: $grey-blue;
-    }
-}
+    .wrapper_aboutme {
+        grid-area: wrapper_aboutme;
 
-h2 {
-    margin: 30% 0% 5%;
-    display: flex;
-    font-family: $headline-font;
-    font-size: 24px;
-    text-align: left;
-    color: transparent;
-    -webkit-text-stroke: 0.8px $blue;
-    grid-area: title;
-}
-
-.wrapper_aboutme {
-    float: right;
-}
-
-p {
-    max-width: 600px;
-    display: flex;
-    font-family: $text-font;
-    font-size: 16px;
-    line-height: 1.5;
-    color: $grey-blue;
-
-    &::selection {
-        background-color: $blue;
+        p {
+            margin-bottom: 4%;
+            display: block;
+            color: $grey-blue;
+        }
     }
 }
 
