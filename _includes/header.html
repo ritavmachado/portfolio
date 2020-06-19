@@ -6,7 +6,7 @@
       </a>
       <ul id="menu_desktop">
         {% for item in site.data.nav_pages.pages offset:1 %}
-        <li><a href="{{site.baseurl}}/{{item.url}}">{{ item.title }}</a></li>
+        <li><a href="{{site.baseurl}}/{{item.url}}">&nbsp;{{ item.title }}&nbsp;</a></li>
         {% endfor %}
       </ul>
     </nav>

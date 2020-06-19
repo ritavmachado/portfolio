@@ -13,10 +13,6 @@
     scroll-behavior: smooth;
 }
 
-*::selection {
-    background-color: $blue;
-}
-
 body {
     display: flex;
     min-height: 100vh;
@@ -262,6 +258,10 @@ p {
     font-size: 16px;
     line-height: 1.5;
     color: $grey-blue;
+
+    &::selection {
+        background-color: $blue;
+    }
 }
 
 /*Section_Studies*/
@@ -412,11 +412,11 @@ h4 {
     grid-gap: 10px;
     padding: 10px;
     grid-template-rows: auto;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto;
     grid-template-areas:
-        "title title"
-        "column_work01 column_work01"
-        "column_work02 column_work02";
+        "title"
+        "column_work01"
+        "column_work02";
 }
 
 .column_work01 {
@@ -462,31 +462,6 @@ figcaption {
     }
 }
 
-/*Footer*/
-footer {
-    height: 50px;
-    bottom: 0;
-    padding: 0% 2% 0% 2%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    background-color: $dark-blue;
-
-    p {
-        width: 50%;
-        font-family: $text-font;
-        font-size: 12px;
-        color: $blue;
-    }
-}
-
-#footer_rights {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-
 /*Lets Talk*/
 #social {
     ul {
@@ -520,6 +495,27 @@ footer {
     }
 }
 
+/*Footer*/
+footer {
+    height: 50px;
+    bottom: 0;
+    padding: 0% 2% 0% 2%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $dark-blue;
+
+    p {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-family: $text-font;
+        font-size: 12px;
+        color: $blue;
+    }
+}
+
 /*Media Queries - DESKTOP*/
 @include media-query(620px) {
 
@@ -534,10 +530,16 @@ footer {
             display: flex;
             flex-direction: row;
             align-items: center;
+            padding: 0px 20px 0px 10px;
 
             li {
                 display: inline;
                 margin: 12px;
+            }
+
+            li a:hover {
+                background-color: $grey-blue;
+                color: $white;
             }
         }
 
@@ -659,6 +661,15 @@ footer {
         // -moz-transition: opacity 1s;
         // -webkit-transition: opacity 1s;
         // -o-transition: opacity 1s;
+    }
+
+    /*Footer*/
+    footer {
+        justify-content: flex-end;
+
+        p {
+            justify-content: flex-end;
+        }
     }
 
 }
