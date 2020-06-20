@@ -57,6 +57,7 @@ main {
 
 a {
     text-decoration: none;
+    color: $blue;
 
     &:active {
         color: $blue;
@@ -538,7 +539,7 @@ header {
                     width: 44px;
 
                     &:hover {
-                        filter: brightness(80%);
+                        filter: brightness(75%);
                         transition: filter 0.1s;
                         -moz-transition: filter 0.1s;
                         -webkit-transition: filter 0.1s;
