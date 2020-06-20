@@ -38,32 +38,32 @@ body {
 header {
     max-width: 100vw;
     position: relative;
-}
 
-/* Top Bar */
-.topbar {
-    width: 100vw;
-    height: 70px;
-    position: fixed;
-    z-index: 3;
-    display: block;
-    background-color: $dark-blue;
-}
+    /* Top Bar */
+    .topbar {
+        width: 100vw;
+        height: 70px;
+        position: fixed;
+        z-index: 3;
+        display: block;
+        background-color: $dark-blue;
+    }
 
-#logo {
-    display: none;
-}
+    #nav_desktop {
+        display: none;
 
-header #nav_desktop {
-    display: none;
-}
+        #logo {
+            display: none;
+        }
+    }
 
-header #nav_mobile {
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    position: sticky;
-    display: flex;
+    #nav_mobile {
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        position: sticky;
+        display: flex;
+    }
 }
 
 /* Menu Mobile — https://codepen.io/erikterwan/pen/EVzeRP*/
@@ -168,7 +168,6 @@ header #nav_mobile {
 }
 
 /* Typography */
-
 h1 {
     width: 275px;
     position: absolute;
@@ -259,72 +258,69 @@ a {
     }
 }
 
+figure {
+    width: 100%;
+}
 
 /* Sections */
-#section_about,
-#section_skills,
-#section_studies,
-#section_work {
-    box-sizing: border-box;
-}
 
 /*Section_Work*/
 #section_work {
+    box-sizing: border-box;
     min-height: 100vh;
     padding: 5%;
-
     @include grid-template-mobile;
     grid-template-areas:
         "title"
         "column_work01"
         "column_work02";
-}
 
-.column_work01 {
-    grid-area: column_work01;
-}
+    .column_work {
 
-.column_work02 {
-    grid-area: column_work02;
-}
+        &.column_work01 {
+            grid-area: column_work01;
+        }
 
-.card {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10%;
-    padding: 2%;
-    box-sizing: border-box;
-    border-radius: 4%;
-    background-color: $white;
-    box-shadow: 2px 2px 6px $grey-blue-shadow;
-}
+        &.column_work02 {
+            grid-area: column_work02;
+        }
 
-figure {
-    width: 100%;
-}
+        .card {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10%;
+            padding: 2%;
+            box-sizing: border-box;
+            border-radius: 4%;
+            background-color: $white;
+            box-shadow: 2px 2px 6px $grey-blue-shadow;
+        }
 
-.column_work img {
-    width: 100%;
-    display: flex;
-    object-fit: cover;
-    border-radius: 4%;
-}
+        img {
+            width: 100%;
+            display: flex;
+            object-fit: cover;
+            border-radius: 4%;
+        }
 
-figcaption {
-    width: 100%;
-    max-height: 100%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+        figcaption {
+            width: 100%;
+            max-height: 100%;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
 
-    p {
-        margin-top: 5%;
+            p {
+                margin-top: 5%;
+            }
+        }
     }
 }
 
 /*Section_About*/
 #section_about {
+    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
     @include grid-template-mobile;
@@ -362,6 +358,7 @@ figcaption {
 
 /*Section_Studies*/
 #section_studies {
+    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
     /* display: flex;
@@ -407,6 +404,7 @@ figcaption {
 
 /*Section_Skills*/
 #section_skills {
+    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
     @include grid-template-mobile;
@@ -498,8 +496,9 @@ figcaption {
     }
 }
 
-/*Lets Talk*/
+/*Section_LetsTalk*/
 #section_letstalk {
+    box-sizing: border-box;
     width: 275px;
     position: absolute;
     top: 50%;
@@ -573,11 +572,28 @@ footer {
 /*Media Queries - DESKTOP*/
 @include media-query(768px) {
 
+    /*Typography*/
+    h1 {
+        width: 450px;
+        font-size: 30px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    h2 {
+        margin: 90px 0% 45px;
+    }
+
     /*Header*/
     header {
         position: fixed;
         z-index: 1;
         background-size: 100% 100%;
+
+        .topbar {
+            position: relative;
+            background-color: $white;
+        }
 
         #nav_desktop {
             display: block;
@@ -585,6 +601,20 @@ footer {
             flex-direction: row;
             align-items: center;
             padding: 0px 20px 0px 10px;
+
+            #logo {
+                width: 55px;
+                height: 40px;
+                margin: 12px;
+                display: block;
+            }
+
+            #menu_desktop {
+                margin-left: auto;
+                margin-bottom: 0;
+                font-family: $text-font;
+                font-size: 16px;
+            }
 
             li {
                 display: inline;
@@ -602,32 +632,6 @@ footer {
         }
     }
 
-    .topbar {
-        position: relative;
-        background-color: $white;
-    }
-
-    #logo {
-        width: 55px;
-        height: 40px;
-        margin: 12px;
-        display: block;
-    }
-
-    #menu_desktop {
-        margin-left: auto;
-        margin-bottom: 0;
-        font-family: $text-font;
-        font-size: 16px;
-    }
-
-    h1 {
-        width: 450px;
-        font-size: 30px;
-        line-height: 1.5;
-        text-align: center;
-    }
-
     /*Main*/
 
     /*Section_Work*/
@@ -636,30 +640,22 @@ footer {
         grid-template-areas:
             "title title"
             "column_work01 column_work02";
-    }
 
-    .column_work {
-        padding: 0 8px;
-        flex: 25%;
-    }
+        .column_work {
+            padding: 0 8px;
+            flex: 25%;
+        }
 
-    figcaption {
-        padding: 20px;
-    }
+        .card {
+            position: relative;
 
-    h2 {
-        margin: 90px 0% 45px;
-    }
-
-    .card {
-        position: relative;
-
-        img {
-            filter: none;
-            transition: filter 1s;
-            -moz-transition: filter 1s;
-            -webkit-transition: filter 1s;
-            -o-transition: filter 1s;
+            img {
+                filter: none;
+                transition: filter 1s;
+                -moz-transition: filter 1s;
+                -webkit-transition: filter 1s;
+                -o-transition: filter 1s;
+            }
         }
 
         figure {
@@ -670,6 +666,20 @@ footer {
                 -webkit-transition: filter 0.1s;
                 -o-transition: filter 0.1s;
                 animation-fill-mode: forwards;
+            }
+
+            figcaption {
+                // position: absolute;
+                // top: 50%;
+                // left: 50%;
+                // transform: translate(-50%, -50%);
+                padding: 20px;
+                overflow: hidden;
+                // opacity: 0;
+                // transition: opacity 1s;
+                // -moz-transition: opacity 1s;
+                // -webkit-transition: opacity 1s;
+                // -o-transition: opacity 1s;
             }
 
             &:hover figcaption {
@@ -683,20 +693,6 @@ footer {
                 cursor: pointer;
             }
         }
-    }
-
-    figcaption {
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
-        padding: 20px;
-        overflow: hidden;
-        // opacity: 0;
-        // transition: opacity 1s;
-        // -moz-transition: opacity 1s;
-        // -webkit-transition: opacity 1s;
-        // -o-transition: opacity 1s;
     }
 
     /*Section_About*/
