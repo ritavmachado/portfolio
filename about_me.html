@@ -27,48 +27,44 @@ permalink: /about_me/
 <!--Studies-->
 <section id="section_studies">
     <h2>STUDIES</h2>
-    <div class="wrapper_studies">
-        <div class="column_studies column_studies01">
-            {% for study in site.studies limit:5 %}
-            <div class="box">
-                <figure><img src="{{study.image}}" alt="{{study.image_alt}}"></figure>
-                <h3><mark>&nbsp;{{study.title}}&nbsp;</mark></h3>
-                <h4>{{study.study_date}}</h4>
-                <p>{{study.institution}}</p>
-            </div>
-            {% endfor %}
+    <div class="column_studies column_studies01">
+        {% for study in site.studies limit:5 %}
+        <div class="box">
+            <figure><img src="{{study.image}}" alt="{{study.image_alt}}"></figure>
+            <h3><mark>&nbsp;{{study.title}}&nbsp;</mark></h3>
+            <h4>{{study.study_date}}</h4>
+            <p>{{study.institution}}</p>
         </div>
-        <div class="column_studies column_studies02">
-            {% for study in site.studies offset:5 %}
-            <div class="box">
-                <figure><img src="{{study.image}}" alt="{{study.image_alt}}"></figure>
-                <h3><mark>&nbsp;{{study.title}}&nbsp;</mark></h3>
-                <h4>{{study.study_date}}</h4>
-                <p>{{study.institution}}</p>
-            </div>
-            {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="column_studies column_studies02">
+        {% for study in site.studies offset:5 %}
+        <div class="box">
+            <figure><img src="{{study.image}}" alt="{{study.image_alt}}"></figure>
+            <h3><mark>&nbsp;{{study.title}}&nbsp;</mark></h3>
+            <h4>{{study.study_date}}</h4>
+            <p>{{study.institution}}</p>
         </div>
+        {% endfor %}
     </div>
 </section>
 <!--Skills-->
 <section id="section_skills">
     <h2>SKILLS</h2>
-    <div class="wrapper_skills">
-        <div class="column_skills column_skills01">
-            {% for skill in site.skills limit:5 %}
-            <h3><mark>&nbsp;{{skill.name}}&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="{{skill.meter_value_id}}"></div>
-            </div>
-            {% endfor %}
+    <div class="column_skills column_skills01">
+        {% for skill in site.skills limit:5 %}
+        <h3><mark>&nbsp;{{skill.name}}&nbsp;</mark></h3>
+        <div class="meter">
+            <div class="value" id="{{skill.meter_value_id}}"></div>
         </div>
-        <div class="column_skills column_skills02">
-            {% for skill in site.skills offset:5 %}
-            <h3><mark>&nbsp;{{skill.name}}&nbsp;</mark></h3>
-            <div class="meter">
-                <div class="value" id="{{skill.meter_value_id}}"></div>
-            </div>
-            {% endfor %}
+        {% endfor %}
+    </div>
+    <div class="column_skills column_skills02">
+        {% for skill in site.skills offset:5 %}
+        <h3><mark>&nbsp;{{skill.name}}&nbsp;</mark></h3>
+        <div class="meter">
+            <div class="value" id="{{skill.meter_value_id}}"></div>
         </div>
+        {% endfor %}
     </div>
 </section>

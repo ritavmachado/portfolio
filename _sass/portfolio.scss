@@ -11,10 +11,16 @@
 @mixin grid-template-mobile {
     display: grid;
     grid-gap: 10px;
-    padding: 10px;
+    padding: 10%;
     grid-template-rows: auto;
     grid-template-columns: auto;
     justify-items: center;
+}
+
+@mixin grid-template-desktop {
+    padding: 0px 5%;
+    grid-template-columns: auto auto;
+    grid-gap: 10px 5%;
 }
 
 * {
@@ -174,6 +180,7 @@ h1 {
     line-height: 1.5;
     text-align: left;
     color: $dark-blue;
+    margin-bottom: 30px;
 }
 
 mark {
@@ -200,7 +207,7 @@ h3 {
 
 h4 {
     top: 0;
-    /* float: right; */
+    float: right;
     font-family: $text-font;
     font-size: 12px;
     color: $grey-blue;
@@ -258,7 +265,6 @@ a {
 #section_skills,
 #section_studies,
 #section_work {
-    padding: 10%;
     box-sizing: border-box;
 }
 
@@ -366,12 +372,6 @@ figcaption {
         "column_studies01"
         "column_studies02";
 
-    /* .wrapper_studies {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    } */
-
     .column_studies {
         max-width: 100%;
         margin: 0 auto;
@@ -409,10 +409,8 @@ figcaption {
 #section_skills {
     width: 100%;
     min-height: 100vh;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
     @include grid-template-mobile;
+    padding: 0px 15%;
     grid-template-areas:
         "title"
         "column_skills01"
@@ -430,6 +428,7 @@ figcaption {
         display: flex;
         flex: 50%;
         flex-direction: column;
+        width: 100%;
 
         &.column_skills01 {
             grid-area: column_skills01;
@@ -441,8 +440,7 @@ figcaption {
 
         .meter {
             height: 10px;
-            margin-top: 5%;
-            margin-bottom: 15%;
+            margin: 20px 0px 70px;
             display: flex;
             align-items: center;
             border-radius: 20px;
@@ -501,34 +499,52 @@ figcaption {
 }
 
 /*Lets Talk*/
-#social {
-    ul {
-        width: 50%;
-        display: flex;
-        justify-content: flex-end;
+#section_letstalk {
+    width: 275px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+        position: relative;
+        top: unset;
+        left: unset;
+        transform: unset;
+        text-align: center;
     }
 
-    li {
-        padding-left: 12px;
-        display: flex;
-        font-family: $text-font;
-        font-size: 12px;
-        color: $blue;
-    }
+    #social {
+        grid-area: social;
 
-    a {
-        color: $blue;
+        ul {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+        }
 
-        &:visited {
+        li {
+            padding-left: 12px;
+            display: flex;
+            font-family: $text-font;
+            font-size: 12px;
             color: $blue;
         }
 
-        &:active {
+        a {
             color: $blue;
-        }
 
-        &:hover {
-            color: $blue;
+            &:visited {
+                color: $blue;
+            }
+
+            &:active {
+                color: $blue;
+            }
+
+            &:hover {
+                color: $blue;
+            }
         }
     }
 }
@@ -555,7 +571,7 @@ footer {
 }
 
 /*Media Queries - DESKTOP*/
-@include media-query(620px) {
+@include media-query(768px) {
 
     /*Header*/
     header {
@@ -616,11 +632,23 @@ footer {
 
     /*Section_Work*/
     #section_work {
-        padding: 5% 5% 5% 5%;
+        @include grid-template-desktop;
+        grid-template-areas:
+            "title title"
+            "column_work01 column_work02";
+    }
+
+    .column_work {
+        padding: 0 8px;
+        flex: 25%;
+    }
+
+    figcaption {
+        padding: 20px;
     }
 
     h2 {
-        margin: 10% 0% 5%;
+        margin: 90px 0% 45px;
     }
 
     .card {
@@ -662,7 +690,7 @@ footer {
         // top: 50%;
         // left: 50%;
         // transform: translate(-50%, -50%);
-        padding: 60px;
+        padding: 20px;
         overflow: hidden;
         // opacity: 0;
         // transition: opacity 1s;
@@ -671,34 +699,59 @@ footer {
         // -o-transition: opacity 1s;
     }
 
-    /*Section_Studies*/
-    .column_studies {
-        padding: 0 2%;
+    /*Section_About*/
+    #section_about {
+        @include grid-template-desktop;
+        grid-template-columns: auto;
+        padding: 80px;
     }
 
-    .box {
-        figure {
-            width: 50px;
-            height: 50px;
-            margin-right: 4%;
-            float: left;
-            display: block;
+    /*Section_Studies*/
+    #section_studies {
+        @include grid-template-desktop;
+        grid-template-areas:
+            "title title"
+            "column_studies01 column_studies02";
+
+        .column_studies {
+            padding: 0 2%;
         }
 
-        img {
-            width: 100%;
-            border-radius: 50%;
-            box-shadow: 2px 2px 6px $grey-blue-shadow;
+        .box {
+            figure {
+                width: 50px;
+                height: 50px;
+                margin-right: 4%;
+                float: left;
+                display: block;
+            }
+
+            img {
+                width: 100%;
+                border-radius: 50%;
+                box-shadow: 2px 2px 6px $grey-blue-shadow;
+            }
         }
     }
 
     /*Section_Skills*/
     #section_skills {
-        flex-direction: column;
+        @include grid-template-desktop;
+        grid-template-areas:
+            "title title"
+            "column_skills01 column_skills02";
+        justify-content: center;
+        grid-gap: 10px 100px;
+        grid-template-columns: 50% 50%;
+        padding: 0px 15%;
+    }
 
-        .meter {
-            width: 100%;
-        }
+    /*Section_Letstalk*/
+    #section_letstalk {
+        width: 450px;
+        font-size: 30px;
+        line-height: 1.5;
+        text-align: center;
     }
 
     /*Footer*/
@@ -712,63 +765,11 @@ footer {
 
 }
 
-@include media-query(800px) {
-
-    /*Section_Work*/
-    #section_work {
-        grid-template-areas:
-            "title title"
-            "column_work01 column_work02";
-    }
-
-    .column_work {
-        padding: 0 8px;
-        flex: 25%;
-    }
-
-    figcaption {
-        padding: 20px;
-    }
-
-}
-
 @include media-query(870px) {
 
-    /*Section_Skills*/
-    .wrapper_skills {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #section_skills .meter {
-        width: 130%;
-        margin-bottom: 30%;
-    }
-
     /*Section_Work*/
-    figcaption {
-        padding: 15px;
-    }
-
-}
-
-@include media-query(955px) {
-
-    /*Section_Studies*/
-    #section_studies {
-        width: 100%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .wrapper_studies {
-        flex-direction: row;
-    }
-
-    .box figure {
-        display: none;
+    figcaption p {
+        font-size: 18px;
     }
 
 }
