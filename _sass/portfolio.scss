@@ -15,6 +15,7 @@
     grid-template-rows: auto;
     grid-template-columns: auto;
     justify-items: center;
+    box-sizing: border-box;
 }
 
 @mixin grid-template-desktop {
@@ -266,7 +267,6 @@ figure {
 
 /*Section_Work*/
 #section_work {
-    box-sizing: border-box;
     min-height: 100vh;
     padding: 5%;
     @include grid-template-mobile;
@@ -320,7 +320,6 @@ figure {
 
 /*Section_About*/
 #section_about {
-    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
     @include grid-template-mobile;
@@ -358,7 +357,6 @@ figure {
 
 /*Section_Studies*/
 #section_studies {
-    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
     /* display: flex;
@@ -404,7 +402,6 @@ figure {
 
 /*Section_Skills*/
 #section_skills {
-    box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
     @include grid-template-mobile;
@@ -498,7 +495,6 @@ figure {
 
 /*Section_LetsTalk*/
 #section_letstalk {
-    box-sizing: border-box;
     width: 275px;
     position: absolute;
     top: 50%;
@@ -513,14 +509,10 @@ figure {
         text-align: center;
     }
 
-    #social {
-        grid-area: social;
-
-        ul {
-            width: 50%;
-            display: flex;
-            justify-content: flex-end;
-        }
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
 
         li {
             padding-left: 12px;
@@ -528,21 +520,34 @@ figure {
             font-family: $text-font;
             font-size: 12px;
             color: $blue;
-        }
 
-        a {
-            color: $blue;
-
-            &:visited {
+            a {
                 color: $blue;
-            }
 
-            &:active {
-                color: $blue;
-            }
+                &:visited {
+                    color: $blue;
+                }
 
-            &:hover {
-                color: $blue;
+                &:active {
+                    color: $blue;
+                }
+
+                &:hover {
+                    color: $blue;
+                }
+
+                img {
+                    width: 44px;
+                }
+
+                img:hover {
+                    filter: brightness(90%);
+                    transition: filter 0.1s;
+                    -moz-transition: filter 0.1s;
+                    -webkit-transition: filter 0.1s;
+                    -o-transition: filter 0.1s;
+                    animation-fill-mode: forwards;
+                }
             }
         }
     }
@@ -660,7 +665,7 @@ footer {
 
         figure {
             &:hover img {
-                filter: blur(2px) opacity(30%);
+                filter: brightness(90%);
                 transition: filter 0.1s;
                 -moz-transition: filter 0.1s;
                 -webkit-transition: filter 0.1s;
