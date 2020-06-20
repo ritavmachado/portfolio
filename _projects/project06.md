@@ -1,8 +1,8 @@
 ---
-title: "Project 06"
-image: ../assets/img/section_work/work_06.png
-image_alt: orange illustrated poster
-project_title: Workflow Poster
-project_description: how to define visualy a good workflow keep things linear, organized, step by&nbsp;step.
-link: #
+title: "Project 07"
+image: ../assets/img/section_work/work_07.png
+image_alt: Blue illustrated poster
+project_title: Designer Work Guide
+project_description: A visual guide of mindsets in how to achieve a good workflow as a designer.
+link: https://www.behance.net/gallery/73539099/THINK-WorkFlow
 ---
